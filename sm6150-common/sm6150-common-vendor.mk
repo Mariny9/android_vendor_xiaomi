@@ -6,18 +6,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/sm6150-common
 
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/init/wfdservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/wfdservice.rc \
     vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/audiosphere.xml \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/dpmapi.xml \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qcrilhook.xml \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qti_permissions.xml \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/permissions/telephonyservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephonyservice.xml \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/seccomp_policy/wfdservice.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/wfdservice.policy \
-    vendor/xiaomi/sm6150-common/proprietary/system_ext/etc/wfdconfigsink.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/wfdconfigsink.xml \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile1.xml \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile2.xml \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/cne/wqeclient/ATT/ATT_profile3.xml \
@@ -73,7 +62,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.dsp@1.0-service.rc \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.soter@1.0-service.rc \
-    vendor/xiaomi/sm6150-common/proprietary/vendor/etc/init/vendor.qti.media.c2@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.media.c2@1.0-service.rc \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/init/vendor.qti.rmt_storage.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.rmt_storage.rc \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/init/vendor.qti.tftp.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.tftp.rc \
     vendor/xiaomi/sm6150-common/proprietary/vendor/etc/init/vppservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vppservice.rc \
@@ -137,10 +125,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vpp@1.1 \
     vendor.qti.hardware.vpp@1.2 \
     vendor.qti.hardware.vpp@1.3 \
-    sound_trigger.primary.sm6150 \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
     libFileMux_proprietary \
-    libMpeg4SwEncoder \
     libOmxAacDec \
     libOmxAlacDec \
     libOmxAlacDecSw \
@@ -163,8 +149,8 @@ PRODUCT_PACKAGES += \
     libqcodec2 \
     librice \
     libsmwrapper \
-    libswvdec \
     libvppclient \
+    libwfdaac \
     libwfdcodecv4l2_proprietary \
     libwfdcommonutils_proprietary \
     libwfdconfigutils_proprietary \
@@ -389,65 +375,16 @@ PRODUCT_PACKAGES += \
     vendor.qti.imsrtpservice@3.0-service-Impl \
     vendor.qti.imsrtpservice@3.0_vendor \
     vendor.qti.latency@2.0 \
-    libmmosal_system_ext \
-    libmmparser_lite \
-    libmmrtpdecoder \
-    libmmrtpencoder \
-    libwfdcommonutils \
-    libwfdconfigutils \
-    libwfddisplayconfig \
-    libwfdmminterface \
-    libwfdmmsink \
-    libwfdrtsp \
-    libwfdsinksm \
-    libwfduibcinterface \
-    libwfduibcsink \
-    libwfduibcsinkinterface \
-    libwfduibcsrc \
-    libwfduibcsrcinterface \
-    libwfdavenhancements \
-    libwfdmmsrc_system \
-    libwfdservice \
-    vendor.qti.hardware.wifidisplaysession@1.0_system_ext \
-    com.qualcomm.qti.dpm.api@1.0_system_ext \
     fm_helium \
-    lib-imsvideocodec \
-    lib-imsvt \
-    lib-imsvtextutils \
-    lib-imsvtutils \
-    libaptXHD_encoder \
-    libaptX_encoder \
-    libdiag_system \
-    libdpmctmgr \
-    libdpmfdmgr \
-    libdpmframework \
-    libdpmtcm \
     libfm-hci \
-    libimscamera_jni \
-    libimsmedia_jni \
-    libwfdclient \
-    libwfdnative \
-    vendor.qti.diaghal@1.0 \
     vendor.qti.hardware.fm@1.0_system_ext \
-    vendor.qti.imsrtpservice@3.0_system_ext \
     SoterService \
     CACertService \
     CneApp \
     IWlanService \
     TimeService \
     PowerOffAlarm \
-    QtiTelephonyService \
-    WfdService \
-    dpmserviceapp \
-    ims \
-    qcrilmsgtunnel \
-    WfdCommon \
-    tcmclient \
     audiosphere \
-    com.qti.dpmframework \
-    dpmapi \
-    qcrilhook \
-    qti-telephony-common \
     manifest_android.hardware.drm@1.3-service.widevine \
     vendor.qti.gnss@4.0-service \
     adpl \
@@ -465,7 +402,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.alarm@1.0-service \
     vendor.qti.hardware.capabilityconfigstore@1.0-service \
     vendor.qti.hardware.soter@1.0-service \
-    vendor.qti.media.c2@1.0-service \
     ims_rtp_daemon \
     imsdatadaemon \
     imsqmidaemon \
@@ -490,6 +426,4 @@ PRODUCT_PACKAGES += \
     vppservice \
     wfdvndservice \
     wifidisplayhalservice \
-    xtra-daemon \
-    dpmd \
-    wfdservice
+    xtra-daemon
